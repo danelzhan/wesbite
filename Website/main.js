@@ -183,18 +183,84 @@ document.body.onscroll = moveCamera;
 // interactive stuff
 
 //play songs
-const paperRings = document.getElementById('songButton');
-const paperRingsSong = new Audio('paperRings.mp3');
-paperRings.addEventListener("click", function () {
-  paperRingsSong.play();
+const songButton = document.getElementById('songButton');
+const songChoice = document.getElementById('song_selection');
+
+const paperRingsSong = new Audio('songs/paperRings.mp3');
+const ivySong = new Audio('songs/ivy.mp3');
+const loveStorySong = new Audio('songs/love.mp3');
+const cruelSummerSong = new Audio('songs/cruel.mp3');
+const belongSong = new Audio('songs/belong.mp3');
+const allWellSong = new Audio('songs/tooWell.mp3');
+const fortnightSong = new Audio('songs/fortnight.mp3');
+const toysSong = new Audio('songs/toys.mp3');
+
+songButton.addEventListener("click", function () {
+
+  const value = songChoice.value;
+
+  stopMusic();
+
+  if (value == "paper_rings") {
+    paperRingsSong.play();
+  } else if (value == "ivy") {
+    ivySong.play();
+  } else if (value == "cruel_summer") {
+    cruelSummerSong.play();
+  } else if (value == "belong_me") {
+    belongSong.play();
+  } else if (value == "love_story") {
+    loveStorySong.play();
+  } else if (value == "all_well") {
+    allWellSong.play();
+  } else if (value == "fortnight") {
+    fortnightSong.play();
+  } else if (value == "toys") {
+    toysSong.play();
+  }
+
   scene.add(record);
 });
+
+//stop record player 
+const stopButton = document.getElementById('stopButton');
+stopButton.addEventListener('click', function(){
+  stopMusic();
+  scene.remove(record);
+
+});
+
+function stopMusic() {
+  paperRingsSong.pause();
+  paperRingsSong.currentTime = 0;
+  ivySong.pause();
+  ivySong.currentTime = 0;
+  loveStorySong.pause();
+  loveStorySong.currentTime = 0;
+  cruelSummerSong.pause();
+  cruelSummerSong.currentTime = 0;
+  belongSong.pause();
+  belongSong.currentTime = 0;
+  allWellSong.pause();
+  allWellSong.currentTime = 0;
+  fortnightSong.pause();
+  fortnightSong.currentTime = 0;
+  toysSong.pause();
+  toysSong.currentTime = 0;
+}
 
 //blow candle
 const candleBlow = document.getElementById('blowButton');
 const blowAudio = new Audio('blow.mp3');
 candleBlow.addEventListener("click", function () {
-  blowAudio.play();
-  scene.remove(fire);
+  if (candleBlow.innerHTML == "blow") {
+    blowAudio.play();
+    scene.remove(fire);
+    candleBlow.innerHTML = "ignite";
+  } else {
+    scene.add(fire);
+    candleBlow.innerHTML = "blow";
+  }
+
 });
 
