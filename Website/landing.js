@@ -19,14 +19,10 @@ function landingLogicYes () {
     noAmount = 0;
 
     if (textBox.innerHTML == "hi ivy!") {
-        textBox.innerHTML = "i have a question";
-        yesButton.innerHTML = "ok";
-        noButton.innerHTML = "k...";
-    } else if (textBox.innerHTML == "i have a question") {
-        textBox.innerHTML = "are we dating?";
+        textBox.innerHTML = "btww are we dating?";
         yesButton.innerHTML = "yess :D";
         noButton.innerHTML = "no i hate u";
-    } else if (textBox.innerHTML == "are we dating?") {
+    } else if (textBox.innerHTML == "btww are we dating?") {
         textBox.innerHTML = "yayy ok since we're dating and its national girlfriend day i wanna get u a gift";
         yesButton.innerHTML = "okay!!";
         noButton.innerHTML = "nah i'm good";
@@ -45,7 +41,7 @@ function landingLogicNo () {
         yesButton.style.transform = "scale(" + Math.pow(1.5, noAmount) + ", " + Math.pow(1.5, noAmount) + ")";
         noButton.style.transform = "scale(" + Math.pow(0.75, noAmount) + ", " + Math.pow(0.75, noAmount) + ")";
     } else if (textBox.innerHTML == "i have a question") {
-        textBox.innerHTML = "are we dating?";
+        textBox.innerHTML = "btww are we dating?";
         yesButton.innerHTML = "yess :D";
         noButton.innerHTML = "no i hate u";
     }
